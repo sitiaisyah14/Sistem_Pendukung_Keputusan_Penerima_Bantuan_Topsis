@@ -27,11 +27,9 @@ if (!isset($_SESSION['ymax'])) {
 
 <div class="box-header">
 	<h3 class="box-title ">Nilai Preferensi</h3>
-	<p>
-		<a style="margin-bottom:10px" href="cetak.php" target="_blank" class="btn btn-default pull-right"><span class='glyphicon glyphicon-print'></span>Cetak Laporan</a>
-	</p>
 </div>
 
+<font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
 		<tr>
@@ -154,3 +152,4 @@ if (!isset($_SESSION['ymax'])) {
 
 	</tbody>
 </table>
+</font>

@@ -1,4 +1,5 @@
 <h1>Nilai Matriks</h1>
+<font size="2px">
 <ul class="nav nav-tabs">
 
 	<li class="active"><a href="index.php?a=kriteria&k=kriteria">Isi Nilai Matriks</a></li>
@@ -84,7 +85,7 @@
 
 	</div>
 
-
+</font>
 </form>
 <?php
 $b = mysqli_query($k21, "select * from kriteria");

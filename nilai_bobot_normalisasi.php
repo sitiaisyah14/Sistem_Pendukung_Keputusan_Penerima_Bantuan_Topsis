@@ -10,6 +10,7 @@ $h = mysqli_num_rows($s);
 	<h3 class="box-title ">Nilai Bobot Ternormalisasi</h3>
 </div>
 
+<font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
 		<tr>
@@ -81,3 +82,4 @@ $h = mysqli_num_rows($s);
 
 	</tbody>
 </table>
+</font>

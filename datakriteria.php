@@ -4,6 +4,7 @@
 <div class="table-responsive">
     <div class="panel panel-default">
         <!-- Default panel contents -->
+        <font size="2px">
         <div class="panel-heading">DATA KRITERIA</div>
         
         <table class="table table-bordered table-striped">
@@ -85,6 +86,7 @@
                 ?>
             </tbody>
         </table>
+        </font>
     </div>
     </div>
 </div>

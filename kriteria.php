@@ -1,4 +1,5 @@
 <h1>Kriteria</h1>
+<font size="2px">
 <ul class="nav nav-tabs">
 	<?php
 	if ($_GET['k'] == 'kriteria') {
@@ -15,8 +16,8 @@
 	<li <?php echo $act1; ?>><a href="index.php?a=kriteria&k=kriteria">Data Kriteria</a></li>
 	<li <?php echo $act2; ?>><a href="index.php?a=kriteria&k=tambah">Tambah Kriteria</a></li>
 
-
 </ul>
+</font>
 
 <?php
 

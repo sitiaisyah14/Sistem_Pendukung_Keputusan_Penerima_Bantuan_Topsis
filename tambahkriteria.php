@@ -25,6 +25,7 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 
 
 <form action="" method="POST">
+	<font size="2px">
 
 	<input type="text" name="id_kriteria" class="form-control" value="<?php echo $IDbaru; ?>" readonly>
 	<br />
@@ -49,6 +50,7 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 	<br />
 	<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 	<br />
+	</font>
 </form>
 
 <?php

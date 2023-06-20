@@ -9,6 +9,7 @@ $h = mysqli_num_rows($s);
 <div class="box-header">
 	<h3 class="box-title ">Nilai Matriks</h3>
 </div>
+<font size="2px">
 <div class="table table-bordered table-responsive">
 	<table class="table table-bordered table-responsive">
 		<thead>
@@ -57,3 +58,4 @@ $h = mysqli_num_rows($s);
 		</tbody>
 	</table>
 </div>
+</font>

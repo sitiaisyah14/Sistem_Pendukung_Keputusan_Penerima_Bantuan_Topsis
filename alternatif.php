@@ -1,4 +1,5 @@
 <h1>Alternatif</h1>
+<font size="2px">
 <ul class="nav nav-tabs">
 	<?php
 	if ($_GET['k'] == 'alternatif') {
@@ -17,7 +18,7 @@
 
 
 </ul>
-
+</font>
 <?php
 
 if (@$_GET['a'] == 'alternatif' and @$_GET['k'] == 'alternatif') {

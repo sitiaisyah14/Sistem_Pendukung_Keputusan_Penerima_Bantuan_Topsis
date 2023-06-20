@@ -12,6 +12,7 @@ $h = mysqli_num_rows($s);
 	<h3 class="box-title ">Matriks Ideal Positif (A<sup>+</sup>)</h3>
 </div>
 
+<font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
 		<tr>
@@ -107,6 +108,7 @@ $h = mysqli_num_rows($s);
 
 	</tbody>
 </table>
+</font>
 
 <!-- tabel min -->
 
@@ -114,6 +116,7 @@ $h = mysqli_num_rows($s);
 	<h3 class="box-title ">Matriks Ideal Negatif (A<sup>-</sup>)</h3>
 </div>
 
+<font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
 		<tr>
@@ -205,3 +208,4 @@ $h = mysqli_num_rows($s);
 
 	</tbody>
 </table>
+</font>
