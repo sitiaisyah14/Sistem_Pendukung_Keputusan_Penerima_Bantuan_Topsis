@@ -32,9 +32,6 @@
                         <center>Poin 4</center>
                     </th>
                     <th>
-                        <center>Poin 5</center>
-                    </th>
-                    <th>
                         <center>Sifat Kriteria</center>
                     </th>
                     <th>
@@ -68,9 +65,6 @@
                         </td>
                         <td>
                             <center><?php echo $d['poin4']; ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $d['poin5']; ?></center>
                         </td>
                         
                         <td>

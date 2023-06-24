@@ -65,9 +65,6 @@
 						<td width="80">
 							<input type="radio" name="nilai<?php echo $i; ?>" value="<?php echo $dalt['poin4']; ?>" /><?php echo $dalt['poin4']; ?>
 						</td>
-						<td width="80">
-							<input type="radio" name="nilai<?php echo $i; ?>" value="<?php echo $dalt['poin5']; ?>" /><?php echo $dalt['poin5']; ?>
-						</td>
 				</tr>
 
 			<?php

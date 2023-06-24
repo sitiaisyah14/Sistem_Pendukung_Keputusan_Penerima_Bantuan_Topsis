@@ -34,7 +34,7 @@ if (!isset($_SESSION['ymax'])) {
 	<thead>
 		<tr>
 			<th>
-				<center>Nomor</center>
+				<center>Ranking</center>
 			</th>
 			<th>
 				<center>Nama</center>

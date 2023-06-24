@@ -45,24 +45,6 @@ $d = mysqli_fetch_assoc($s);
 		<br />
 		<input type="text" name="poin4" class="form-control" placeholder="Poin 4" value="<?php echo $d['poin4']; ?>">
 		<br />
-		<input type="text" name="poin5" class="form-control" placeholder="Poin 5" value="<?php echo $d['poin5']; ?>">
-		<br />
-		<input type="text" name="poin6" class="form-control" placeholder="Poin 6" value="<?php echo $d['poin6']; ?>">
-		<br />
-		<input type="text" name="poin7" class="form-control" placeholder="Poin 7" value="<?php echo $d['poin7']; ?>">
-		<br />
-		<input type="text" name="poin8" class="form-control" placeholder="Poin 8" value="<?php echo $d['poin8']; ?>">
-		<br />
-		<input type="text" name="poin9" class="form-control" placeholder="Poin 9" value="<?php echo $d['poin9']; ?>">
-		<br />
-		<input type="text" name="poin10" class="form-control" placeholder="Poin 10" value="<?php echo $d['poin10']; ?>">
-		<br />
-		<input type="text" name="poin11" class="form-control" placeholder="Poin 11" value="<?php echo $d['poin11']; ?>">
-		<br />
-		<input type="text" name="poin12" class="form-control" placeholder="Poin 12" value="<?php echo $d['poin12']; ?>">
-		<br />
-		<input type="text" name="poin13" class="form-control" placeholder="Poin 13" value="<?php echo $d['poin13']; ?>">
-		<br />
 		<select name="sifat" class="form-control">
 			<option value="<?php echo $d['sifat']; ?>"><?php echo $d['sifat']; ?></option>
 			<option value="benefit">Benefit</option>
@@ -75,7 +57,7 @@ $d = mysqli_fetch_assoc($s);
 </div>
 <?php
 if (isset($_POST['ubah'])) {
-	$s = mysqli_query($k21, "update kriteria set nama_kriteria='$_POST[nama_kriteria]', bobot='$_POST[bobot]', poin1='$_POST[poin1]',poin2='$_POST[poin2]', poin3='$_POST[poin3]', poin4='$_POST[poin4]', poin5='$_POST[poin5]', sifat='$_POST[sifat]' where id_kriteria='$_POST[id_kriteria]'");
+	$s = mysqli_query($k21, "update kriteria set nama_kriteria='$_POST[nama_kriteria]', bobot='$_POST[bobot]', poin1='$_POST[poin1]',poin2='$_POST[poin2]', poin3='$_POST[poin3]', poin4='$_POST[poin4]', sifat='$_POST[sifat]' where id_kriteria='$_POST[id_kriteria]'");
 
 	if ($s) {
 		echo "<script>alert('Diubah'); window.open('index.php?a=kriteria&k=kriteria','_self');</script>";

@@ -41,8 +41,6 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 	<br />
 	<input type="text" name="poin4" class="form-control" placeholder="Poin 4">
 	<br />
-	<input type="text" name="poin5" class="form-control" placeholder="Poin 5">
-	<br />
 	<select name="sifat" class="form-control">
 		<option value="benefit">Benefit</option>
 		<option value="cost">Cost</option>
@@ -55,7 +53,7 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 
 <?php
 if (isset($_POST['simpan'])) {
-	$s = mysqli_query($k21, "insert into kriteria (id_kriteria,nama_kriteria,bobot,poin1,poin2,poin3,poin4,poin5,sifat) values ('$_POST[id_kriteria]','$_POST[nama_kriteria]','$_POST[bobot]','$_POST[poin1]','$_POST[poin2]','$_POST[poin3]','$_POST[poin4]','$_POST[poin5]','$_POST[sifat]')");
+	$s = mysqli_query($k21, "insert into kriteria (id_kriteria,nama_kriteria,bobot,poin1,poin2,poin3,poin4,sifat) values ('$_POST[id_kriteria]','$_POST[nama_kriteria]','$_POST[bobot]','$_POST[poin1]','$_POST[poin2]','$_POST[poin3]','$_POST[poin4]','$_POST[sifat]')");
 
 	if ($s) {
 		echo "<script>alert('Disimpan'); window.open('index.php?a=kriteria&k=kriteria','_self');</script>";
