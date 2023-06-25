@@ -225,7 +225,7 @@
 
   <footer class="main-footer">
     <font size="2px">
-			<b>SPK TI-3E ILS - 2023</b>
+			<b>SPK TI-3E LIA - 2023</b>
     </font>
 		</footer>
 
