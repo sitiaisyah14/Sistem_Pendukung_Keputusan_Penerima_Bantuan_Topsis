@@ -8,35 +8,7 @@ $h = mysqli_num_rows($s);
 	<br><h3 class="box-title ">Nilai Matriks Ternormalisasi</h3><br>
 </div>
 
-<font size="2px">
-<<<<<<< HEAD
-<table class="table table-bordered table-responsive">
-	<thead>
-		<tr style="font-size:18px">
-			<th rowspan="2">
-				<center>No</center>
-			</th>
-			<th rowspan="2">
-				<center>Nama</center>
-			</th>
-			<th colspan="<?php echo $h; ?>">
-				<center>Kriteria</center>
-			</th>
-		</tr>
-		<tr style="font-size:18px">
-			<?php
-			for ($n = 1; $n <= $h; $n++) {
-				echo "<th><center>C{$n}<center></th>";
-			}
-			?>
-			</center>
-		</tr>
-	</thead>
-	<tbody style="font-size:15px">
-		<?php
-		$i = 0;
-		$a = mysqli_query($k21, "select * from alternatif order by id_alternatif asc");
-=======
+<font size="3px">
 	<table class="table table-bordered table-responsive">
 		<thead>
 			<tr>
@@ -63,7 +35,6 @@ $h = mysqli_num_rows($s);
 			<?php
 			$i = 0;
 			$a = mysqli_query($k21, "select * from alternatif order by id_alternatif asc");
->>>>>>> d04769b1bd5e0051213080a01f1b247144434664
 
 			while ($da = mysqli_fetch_assoc($a)) {
 

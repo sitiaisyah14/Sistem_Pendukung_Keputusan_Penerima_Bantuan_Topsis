@@ -22,12 +22,8 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 
 <div class="box-body pad">
 	<form action="" method="POST">
-<<<<<<< HEAD
-
+	<font size="3px">
 		<input style="font-size: 15px;" type="text" name="id_alternatif" class="form-control" value="<?php echo $IDbaru; ?>" readonly>
-=======
-		<input type="text" name="id_alternatif" class="form-control" value="<?php echo $IDbaru; ?>" readonly>
->>>>>>> d04769b1bd5e0051213080a01f1b247144434664
 		<br />
 		<input style="font-size: 15px;" type="text" name="nama_alternatif" class="form-control" placeholder="Nama Alternatif">
 		<br />

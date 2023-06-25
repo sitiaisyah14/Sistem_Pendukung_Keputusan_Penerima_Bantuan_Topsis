@@ -11,31 +11,7 @@ if (!isset($_SESSION['ymax'])) {
 	<br><h3 class="box-title ">Nilai Preferensi</h3><br>
 </div>
 
-<font size="2px">
-<<<<<<< HEAD
-<table class="table table-bordered table-responsive">
-	<thead>
-		<tr style="font-size: 18px;">
-			<th>
-				<center>Ranking</center>
-			</th>
-			<th>
-				<center>Nama</center>
-			</th>
-			<th>
-				<center>V<sub>i</sub></center>
-			</th>
-		</tr>
-
-	</thead>
-	<tbody style="font-size: 15px;">
-		<?php
-		$i = 1;
-		$a = mysqli_query($k21, "select * from alternatif order by id_alternatif asc;");
-		echo "<tr>";
-		$sortir = array();
-		while ($da = mysqli_fetch_assoc($a)) {
-=======
+<font size="3px">
 	<table class="table table-bordered table-responsive">
 		<thead>
 			<tr>
@@ -59,7 +35,6 @@ if (!isset($_SESSION['ymax'])) {
 			$sortir = array();
 			while ($da = mysqli_fetch_assoc($a)) {
 				$idalt = $da['id_alternatif'];
->>>>>>> d04769b1bd5e0051213080a01f1b247144434664
 
 				//ambil nilai
 

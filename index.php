@@ -51,7 +51,7 @@
 
 				<li class="nav-item d-none d-sm-inline-block">
 					<a href="index.php" class="nav-link">
-						<font color="white" size="4px">
+						<font color="white" size="5px">
 							<b>SPK PENERIMA BANTUAN PERBAIKAN RUMAH - TOPSIS</b>
 						</font>
 					</a>
@@ -96,7 +96,7 @@
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
         <img src="dist/img/rumah.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .9">
-        <font size="3px">
+        <font size="5px">
           <span class="brand-text">BANPERUM</span>
         </font>
       </a>
@@ -110,7 +110,7 @@
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
-                <font size="2px">
+                <font size="3px">
                   <p>
                     Kelola Data
                     <i class="fas fa-angle-left right"></i>
@@ -122,7 +122,7 @@
                 <li class="nav-item">
                   <a href="?a=kriteria&k=kriteria" class="nav-link">
                     <i class="nav-icon far fa-circle text-warning"></i>
-                    <font size="2px">
+                    <font size="3px">
                       <p>Data Kriteria</p>
                     </font>
                   </a>
@@ -133,7 +133,7 @@
                 <li class="nav-item">
                   <a href="?a=alternatif&k=alternatif" class="nav-link">
                     <i class="nav-icon far fa-circle text-warning"></i>
-                    <font size="2px">
+                    <font size="3px">
                       <p>Data Alternatif</p>
                     </font>
                   </a>
@@ -144,7 +144,7 @@
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
-                <font size="2px">
+                <font size="3px">
                   <p>
                     Hasil Perhitungan
                     <i class="fas fa-angle-left right"></i>
@@ -156,7 +156,7 @@
                 <li class="nav-item">
                   <a href="?a=nilaimatrik" class="nav-link">
                     <i class="nav-icon far fa-circle text-warning"></i>
-                    <font size="2px">
+                    <font size="3px">
                       <p>Nilai Matriks</p>
                     </font>
                   </a>
@@ -167,7 +167,7 @@
                 <li class="nav-item">
                   <a href="?a=hasiltopsis&k=nilai_matriks" class="nav-link">
                     <i class="nav-icon far fa-circle text-warning"></i>
-                    <font size="2px">
+                    <font size="3px">
                       <p>Hasil Ranking</p>
                     </font>
                   </a>
