@@ -1,9 +1,9 @@
 <?php
-include ("konfig/koneksi.php");
-$s=mysqli_query($k21, "delete from kriteria where id_kriteria='$_GET[id]'");
+include("konfig/koneksi.php");
+$s = mysqli_query($k21, "delete from kriteria where id_kriteria='$_GET[id]'");
 
-if($s){
+if ($s) {
 	echo "<script>window.open('index.php?a=kriteria&k=kriteria','_self');</script>";
-}else{
- echo $a="delete from kriteria where id_kriteria='$_GET[id]'";
+} else {
+	echo $a = "delete from kriteria where id_kriteria='$_GET[id]'";
 }

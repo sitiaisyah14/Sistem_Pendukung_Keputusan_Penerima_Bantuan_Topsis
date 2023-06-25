@@ -2,7 +2,6 @@
 
 include("konfig/koneksi.php");
 
-
 $query = "SELECT max(id_kriteria) as idMaks FROM kriteria";
 $hasil = mysqli_query($k21, $query);
 $data  = mysqli_fetch_array($hasil);
@@ -21,7 +20,6 @@ $IDbaru = $char . sprintf("%03s", $noUrut);
 //ambil data \
 $s = mysqli_query($k21, "select * from kriteria where id_kriteria='$_GET[id]'");
 $d = mysqli_fetch_assoc($s);
-
 
 ?>
 <div class="box-header">

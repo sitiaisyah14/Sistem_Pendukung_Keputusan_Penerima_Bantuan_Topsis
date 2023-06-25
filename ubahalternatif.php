@@ -1,5 +1,4 @@
 <?php
-
 include("konfig/koneksi.php");
 $s = mysqli_query($k21, "select * from alternatif where id_alternatif='$_GET[id]'");
 $d = mysqli_fetch_assoc($s);
@@ -27,5 +26,4 @@ if (isset($_POST['ubah'])) {
 		echo "<script>alert('Diubah'); window.open('index.php?a=alternatif&k=alternatif','_self');</script>";
 	}
 }
-
 ?>
