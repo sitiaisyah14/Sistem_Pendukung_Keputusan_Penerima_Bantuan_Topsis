@@ -1,22 +1,22 @@
 <h1>Kriteria</h1>
 <font size="2px">
-<ul class="nav nav-tabs">
-	<?php
-	if ($_GET['k'] == 'kriteria') {
-		$act1 = 'class="active"';
-		$act2 = '';
-	} else if ($_GET['k'] == 'tambah') {
-		$act1 = '';
-		$act2 = 'class="active"';
-	} else {
-		$act1 = '';
-		$act2 = '';
-	}
-	?>
-	<li <?php echo $act1; ?>><a href="index.php?a=kriteria&k=kriteria">Data Kriteria</a></li>
-	<li <?php echo $act2; ?>><a href="index.php?a=kriteria&k=tambah">Tambah Kriteria</a></li>
+	<ul class="nav nav-tabs">
+		<?php
+		if ($_GET['k'] == 'kriteria') {
+			$act1 = 'class="active"';
+			$act2 = '';
+		} else if ($_GET['k'] == 'tambah') {
+			$act1 = '';
+			$act2 = 'class="active"';
+		} else {
+			$act1 = '';
+			$act2 = '';
+		}
+		?>
+		<li <?php echo $act1; ?>><a href="index.php?a=kriteria&k=kriteria">Data Kriteria</a></li>
+		<li <?php echo $act2; ?>><a href="index.php?a=kriteria&k=tambah">Tambah Kriteria</a></li>
 
-</ul>
+	</ul>
 </font>
 
 <?php
