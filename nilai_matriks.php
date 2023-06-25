@@ -10,52 +10,52 @@ $h = mysqli_num_rows($s);
 	<h3 class="box-title ">Nilai Matriks</h3>
 </div>
 <font size="2px">
-<div class="table table-bordered table-responsive">
-	<table class="table table-bordered table-responsive">
-		<thead>
-			<tr>
-				<th rowspan="2">
-					<center>No</center>
-				</th>
-				<th rowspan="2">
-					<center>Nama</center>
-				</th>
-				<th colspan="<?php echo $h; ?>">
-					<center>Kriteria</center>
-				</th>
-			</tr>
-			<tr>
+	<div class="table table-bordered table-responsive">
+		<table class="table table-bordered table-responsive">
+			<thead>
+				<tr>
+					<th rowspan="2">
+						<center>No</center>
+					</th>
+					<th rowspan="2">
+						<center>Nama</center>
+					</th>
+					<th colspan="<?php echo $h; ?>">
+						<center>Kriteria</center>
+					</th>
+				</tr>
+				<tr>
+					<?php
+					for ($n = 1; $n <= $h; $n++) {
+						echo "<th><center>C{$n}<center></th>";
+					}
+					?>
+					</center>
+				</tr>
+			</thead>
+			<tbody>
 				<?php
-				for ($n = 1; $n <= $h; $n++) {
-					echo "<th><center>C{$n}<center></th>";
-				}
-				?>
-				</center>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			$i = 0;
-			$a = mysqli_query($k21, "select * from alternatif order by id_alternatif asc;");
+				$i = 0;
+				$a = mysqli_query($k21, "select * from alternatif order by id_alternatif asc;");
 
-			while ($da = mysqli_fetch_assoc($a)) {
-				echo "<tr>
+				while ($da = mysqli_fetch_assoc($a)) {
+					echo "<tr>
 		<td>" . (++$i) . "</td>
 		<td>" . $da['nm_alternatif'] . "</td>";
-				$idalt = $da['id_alternatif'];
-				//ambil nilai
-				$n = mysqli_query($k21, "select * from nilai_matrik where id_alternatif='$idalt' order by id_matrik asc");
+					$idalt = $da['id_alternatif'];
+					//ambil nilai
+					$n = mysqli_query($k21, "select * from nilai_matrik where id_alternatif='$idalt' order by id_matrik asc");
 
-				while ($dn = mysqli_fetch_assoc($n)) {
+					while ($dn = mysqli_fetch_assoc($n)) {
 
-					echo "<td align='center'>$dn[nilai]</td>";
+						echo "<td align='center'>$dn[nilai]</td>";
+					}
+					echo "</tr>\n";
 				}
-				echo "</tr>\n";
-			}
 
-			?>
+				?>
 
-		</tbody>
-	</table>
-</div>
+			</tbody>
+		</table>
+	</div>
 </font>
