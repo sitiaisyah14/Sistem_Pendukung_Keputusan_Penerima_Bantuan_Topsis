@@ -1,20 +1,18 @@
-<h1>Nilai Matriks</h1>
+<h1 style="text-align:center; font-size:30px">Tambah Nilai Matriks</h1>
 <font size="2px">
 <ul class="nav nav-tabs">
 
-	<li class="active"><a href="index.php?a=kriteria&k=kriteria">Isi Nilai Matriks</a></li>
+	<li class="active"><a href="index.php?a=kriteria&k=kriteria" style="font-size:15px">Isi Nilai Matriks</a></li>
 
 
 
 </ul>
-<div class="box-header">
-	<h3 class="box-title">Tambah Nilai Matriks</h3>
-</div>
-
-
+<!-- <div class="box-header">
+	<h3 class="box-title" style="font-size:25px">Tambah Nilai Matriks</h3>
+</div> -->
 <form method="POST" action="">
 	<div class="form-group">
-		<label class="control-label col-lg-2">Id Alternatif</label>
+		<label class="control-label col-lg-2" style="font-size:20px">Id Alternatif</label>
 		<div class="col-lg-4">
 			<select name="id_alt" class="form-control">
 				<?php
@@ -23,7 +21,7 @@
 				while ($d = mysqli_fetch_assoc($s)) {
 				?>
 
-					<option value="<?php echo $d['id_alternatif'] ?>"><?php echo $d['id_alternatif'] . " | " . $d['nm_alternatif'] ?></option>
+					<option style="font-size:15px" value="style="font-size:15px" <?php echo $d['id_alternatif'] ?>"><?php echo $d['id_alternatif'] . " | " . $d['nm_alternatif'] ?></option>
 				<?php
 				}
 				?>
@@ -48,11 +46,11 @@
 
 			<table align="left">
 				<tr>
-					<td width="200">
+					<td width="200" style="font-size:16px">
 						<label><?php echo $dalt['nama_kriteria']; ?></label>
 						<input type="hidden" name="id_krite<?php echo $i; ?>" value="<?php echo $dalt['id_kriteria']; ?>" />
 					</td>
-					<div class="col-md-8">
+					<div class="col-md-8" >
 						<td width="80">
 							<input type="radio" name="nilai<?php echo $i; ?>" value="<?php echo $dalt['poin1']; ?>" /><?php echo $dalt['poin1']; ?>
 						</td>
@@ -73,7 +71,7 @@
 			?>
 			<tr>
 				<td colspan=5 align="center">
-					<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+					<br><input style="font-size:20px" type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 				</td>
 			</tr>
 			</table>

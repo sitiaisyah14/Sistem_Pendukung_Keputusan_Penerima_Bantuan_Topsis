@@ -4,7 +4,7 @@
 <div class="table-responsive">
     <div class="panel panel-default">
         <!-- Default panel contents -->
-        <font size="2px">
+        <font size="3px">
         <div class="panel-heading">DATA KRITERIA</div>
         
         <table class="table table-bordered table-striped">
@@ -70,9 +70,9 @@
                         <td>
                             <center><?php echo $d['sifat']; ?></center>
                         </td>
-                        <td>
-                            <a href="?a=kriteria&k=ubahk&id=<?php echo $d['id_kriteria']; ?>" class="btn btn-warning">Ubah</a>
-                            <a href="hapus.php?id=<?php echo $d['id_kriteria']; ?>" class="btn btn-danger">Hapus</a>
+                        <td >
+                            <a href="?a=kriteria&k=ubahk&id=<?php echo $d['id_kriteria']; ?>" class="btn btn-warning" style="font-size: 12px;">Ubah</a>
+                            <a href="hapus.php?id=<?php echo $d['id_kriteria']; ?>" class="btn btn-danger" style="font-size: 12px;">Hapus</a>
                         </td>
                     </tr>
                 <?php

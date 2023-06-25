@@ -20,17 +20,17 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 
 ?>
 <div class="box-header">
-	<h3 class="box-title">Tambah Alternatif</h3>
+	<br><h3 class="box-title">Tambah Alternatif</h3><br>
 </div>
 
 <div class="box-body pad">
 	<form action="" method="POST">
 
-		<input type="text" name="id_alternatif" class="form-control" value="<?php echo $IDbaru; ?>" readonly>
+		<input style="font-size: 15px;" type="text" name="id_alternatif" class="form-control" value="<?php echo $IDbaru; ?>" readonly>
 		<br />
-		<input type="text" name="nama_alternatif" class="form-control" placeholder="Nama Alternatif">
+		<input style="font-size: 15px;" type="text" name="nama_alternatif" class="form-control" placeholder="Nama Alternatif">
 		<br />
-		<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+		<input style="font-size: 15px;" type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 		<br />
 	</form>
 </div>

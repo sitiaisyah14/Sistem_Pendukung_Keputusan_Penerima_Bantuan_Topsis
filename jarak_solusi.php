@@ -8,13 +8,13 @@ $h = mysqli_num_rows($s);
 ?>
 
 <div class="box-header">
-	<h3 class="box-title ">Jarak Solusi Ideal Positif (D<sup>+</sup>)</h3>
+	<br><h3 class="box-title ">Jarak Solusi Ideal Positif (D<sup>+</sup>)</h3><br>
 </div>
 
 <font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
-		<tr>
+		<tr style="font-size: 18px;">
 			<th>
 				<center>Nomor</center>
 			</th>
@@ -27,7 +27,7 @@ $h = mysqli_num_rows($s);
 		</tr>
 
 	</thead>
-	<tbody>
+	<tbody style="font-size: 15px;">
 		<?php
 		//buat array kolom
 
@@ -227,13 +227,13 @@ echo "</pre>";
 <!-- tabel min ------------------------------------------------->
 
 <div class="box-header">
-	<h3 class="box-title ">Jarak Solusi Ideal Negatif (D<sup>-</sup>)</h3>
+	<br><h3 class="box-title ">Jarak Solusi Ideal Negatif (D<sup>-</sup>)</h3><br>
 </div>
 
 <font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
-		<tr>
+		<tr style="font-size: 18px;">
 			<th>
 				<center>Nomor</center>
 			</th>
@@ -245,7 +245,7 @@ echo "</pre>";
 			</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody style="font-size: 15px;">
 		<?php
 		//buat array kolom
 

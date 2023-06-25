@@ -1,5 +1,5 @@
-<h1>Kriteria</h1>
-<font size="2px">
+<h1 style="font-size: 40px; text-align:center">Kriteria</h1><br>
+<font size="4px">
 <ul class="nav nav-tabs">
 	<?php
 	if ($_GET['k'] == 'kriteria') {

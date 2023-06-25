@@ -51,7 +51,7 @@
 
 				<li class="nav-item d-none d-sm-inline-block">
 					<a href="index.php" class="nav-link">
-						<font color="white" size="4px">
+						<font color="white" size="5px">
 							<b>SPK PENERIMA BANTUAN PERBAIKAN RUMAH - TOPSIS</b>
 						</font>
 					</a>

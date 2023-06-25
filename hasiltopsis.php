@@ -1,5 +1,5 @@
-<h1>Hasil Topsis</h1>
-<ul class="nav nav-tabs">
+<h1 style="font-size:30px; text-align:center">Hasil Topsis</h1><br>
+<ul class="nav nav-tabs" style="font-size:15px">
 	<?php
 	if ($_GET['k'] == 'nilai_matriks') {
 		$act1 = 'class="active"';

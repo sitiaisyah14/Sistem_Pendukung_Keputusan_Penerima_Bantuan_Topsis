@@ -9,7 +9,7 @@ $h = mysqli_num_rows($s);
 ?>
 
 <div class="box-header">
-	<h3 class="box-title ">Matriks Ideal Positif (A<sup>+</sup>)</h3>
+	<br><h3 class="box-title ">Matriks Ideal Positif (A<sup>+</sup>)</h3><br>
 </div>
 
 <font size="2px">

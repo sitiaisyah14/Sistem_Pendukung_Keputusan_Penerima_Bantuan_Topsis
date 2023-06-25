@@ -1,5 +1,5 @@
-<h1>Alternatif</h1>
-<font size="2px">
+<h1 style="font-size: 40px; text-align:center">Alternatif</h1>
+<font size="3px">
 <ul class="nav nav-tabs">
 	<?php
 	if ($_GET['k'] == 'alternatif') {

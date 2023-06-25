@@ -1,6 +1,6 @@
 <div class="table-responsive">
     <div class="panel panel-default">
-        <font size="2px">
+        <font size="3px">
         <!-- Default panel contents -->
         <div class="panel-heading">DATA ALTERNATIF</div>
 
@@ -24,8 +24,8 @@
                             <td><center><?php echo $d['id_alternatif']; ?></center></td>
                             <td><center><?php echo $d['nm_alternatif']; ?></center></td>
                             <td><center>
-                                <a href="?a=alternatif&k=ubaha&id=<?php echo $d['id_alternatif']; ?>" class="btn btn-warning">Ubah</a>
-                                <a href="hapusalternatif.php?id=<?php echo $d['id_alternatif']; ?>" class="btn btn-danger">Hapus</a>
+                                <a style="font-size: 15px;" href="?a=alternatif&k=ubaha&id=<?php echo $d['id_alternatif']; ?>" class="btn btn-warning">Ubah</a>
+                                <a style="font-size: 15px;" href="hapusalternatif.php?id=<?php echo $d['id_alternatif']; ?>" class="btn btn-danger">Hapus</a>
                                 </center></td>
                         </tr>
                     <?php

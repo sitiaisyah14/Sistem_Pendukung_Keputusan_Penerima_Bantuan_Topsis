@@ -26,13 +26,13 @@ if (!isset($_SESSION['ymax'])) {
 ?>
 
 <div class="box-header">
-	<h3 class="box-title ">Nilai Preferensi</h3>
+	<br><h3 class="box-title ">Nilai Preferensi</h3><br>
 </div>
 
 <font size="2px">
 <table class="table table-bordered table-responsive">
 	<thead>
-		<tr>
+		<tr style="font-size: 18px;">
 			<th>
 				<center>Ranking</center>
 			</th>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['ymax'])) {
 		</tr>
 
 	</thead>
-	<tbody>
+	<tbody style="font-size: 15px;">
 		<?php
 		$i = 1;
 		$a = mysqli_query($k21, "select * from alternatif order by id_alternatif asc;");
