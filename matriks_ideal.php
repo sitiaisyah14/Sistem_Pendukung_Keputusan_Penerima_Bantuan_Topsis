@@ -2,10 +2,6 @@
 include("konfig/koneksi.php");
 $s = mysqli_query($k21, "select * from kriteria");
 $h = mysqli_num_rows($s);
-
-
-
-
 ?>
 
 <div class="box-header">
@@ -13,101 +9,91 @@ $h = mysqli_num_rows($s);
 </div>
 
 <font size="2px">
-<table class="table table-bordered table-responsive">
-	<thead>
-		<tr>
-			<th colspan="<?php echo $h; ?>">
-				<center>Kriteria</center>
-			</th>
-		</tr>
-		<tr>
+	<table class="table table-bordered table-responsive">
+		<thead>
+			<tr>
+				<th colspan="<?php echo $h; ?>">
+					<center>Kriteria</center>
+				</th>
+			</tr>
+			<tr>
+				<?php
+				$hk = mysqli_query($k21, "select nama_kriteria from kriteria order by id_kriteria asc;");
+				while ($dhk = mysqli_fetch_assoc($hk)) {
+
+					echo "<th>$dhk[nama_kriteria]</th>";
+				}
+				?>
+			</tr>
+			<tr>
+				<?php
+
+				for ($n = 1; $n <= $h; $n++) {
+
+					echo "<th>y<sub>$n</sub><sup>+</sup></th>";
+				}
+				?>
+			</tr>
+		</thead>
+		<tbody>
 			<?php
-			$hk = mysqli_query($k21, "select nama_kriteria from kriteria order by id_kriteria asc;");
-			while ($dhk = mysqli_fetch_assoc($hk)) {
+			$i = 0;
+			$a = mysqli_query($k21, "select * from kriteria order by id_kriteria asc;");
+			echo "<tr>";
+			while ($da = mysqli_fetch_assoc($a)) {
+				$idalt = $da['id_kriteria'];
 
-				echo "<th>$dhk[nama_kriteria]</th>";
-			}
-			?>
-		</tr>
-		<tr>
-			<?php
+				//ambil nilai
+				$n = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idalt'  order by id_matrik ASC");
 
-			for ($n = 1; $n <= $h; $n++) {
+				$c = 0;
+				$ymax = array();
+				while ($dn = mysqli_fetch_assoc($n)) {
+					$idk = $dn['id_kriteria'];
 
-				echo "<th>y<sub>$n</sub><sup>+</sup></th>";
-			}
-			?>
-		</tr>
-	</thead>
-	<tbody>
-		<?php
-		$i = 0;
-		$a = mysqli_query($k21, "select * from kriteria order by id_kriteria asc;");
-		echo "<tr>";
-		while ($da = mysqli_fetch_assoc($a)) {
+					//nilai kuadrat
+					$nilai_kuadrat = 0;
+					$k = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk'  order by id_matrik ASC ");
+					while ($dkuadrat = mysqli_fetch_assoc($k)) {
+						$nilai_kuadrat = $nilai_kuadrat + ($dkuadrat['nilai'] * $dkuadrat['nilai']);
+					}
 
+					//hitung jml alternatif
+					$jml_alternatif = mysqli_query($k21, "select * from alternatif");
+					$jml_a = mysqli_num_rows($jml_alternatif);
 
+					//nilai bobot kriteria (rata")
+					$bobot = 0;
+					$tnilai = 0;
 
-			$idalt = $da['id_kriteria'];
+					$k2 = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk'  order by id_matrik ASC ");
+					while ($dbobot = mysqli_fetch_assoc($k2)) {
+						$tnilai = $tnilai + $dbobot['nilai'];
+					}
+					$bobot = $tnilai / $jml_a;
 
-			//ambil nilai
+					//nilai bobot input
+					$b2 = mysqli_query($k21, "select * from kriteria where id_kriteria='$idk'");
+					$nbot = mysqli_fetch_assoc($b2);
+					$bot = $nbot['bobot'];
 
-			$n = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idalt'  order by id_matrik ASC");
+					$v = round(($dn['nilai'] / sqrt($nilai_kuadrat)) * $bot, 4);
 
-			$c = 0;
-			$ymax = array();
-			while ($dn = mysqli_fetch_assoc($n)) {
-				$idk = $dn['id_kriteria'];
-
-
-				//nilai kuadrat
-
-				$nilai_kuadrat = 0;
-				$k = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk'  order by id_matrik ASC ");
-				while ($dkuadrat = mysqli_fetch_assoc($k)) {
-					$nilai_kuadrat = $nilai_kuadrat + ($dkuadrat['nilai'] * $dkuadrat['nilai']);
+					$ymax[$c] = $v;
+					$c++;
 				}
 
-				//hitung jml alternatif
-				$jml_alternatif = mysqli_query($k21, "select * from alternatif");
-				$jml_a = mysqli_num_rows($jml_alternatif);
-				//nilai bobot kriteria (rata")
-				$bobot = 0;
-				$tnilai = 0;
-
-				$k2 = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk'  order by id_matrik ASC ");
-				while ($dbobot = mysqli_fetch_assoc($k2)) {
-					$tnilai = $tnilai + $dbobot['nilai'];
+				if ($nbot['sifat'] == 'benefit') {
+					echo "<td>" . max($ymax) . "</td>";
+				} else {
+					echo "<td>" . min($ymax) . "</td>";
 				}
-				$bobot = $tnilai / $jml_a;
-
-				//nilai bobot input
-				$b2 = mysqli_query($k21, "select * from kriteria where id_kriteria='$idk'");
-				$nbot = mysqli_fetch_assoc($b2);
-				$bot = $nbot['bobot'];
-
-
-				$v = round(($dn['nilai'] / sqrt($nilai_kuadrat)) * $bot, 4);
-
-				$ymax[$c] = $v;
-				$c++;
 			}
+			echo "</tr>";
+			?>
 
-			if ($nbot['sifat'] == 'benefit') {
-				//echo "<pre>";    
-				//print_r($ymax);    
-				//echo "</pre>";    
-
-				echo "<td>" . max($ymax) . "</td>";
-			} else {
-				echo "<td>" . min($ymax) . "</td>";
-			}
-		}
-		echo "</tr>";
-		?>
-
-	</tbody>
-</table>
+		</tbody>
+	</table>
 </font>
 
 <!-- tabel min -->
@@ -117,95 +103,86 @@ $h = mysqli_num_rows($s);
 </div>
 
 <font size="2px">
-<table class="table table-bordered table-responsive">
-	<thead>
-		<tr>
-			<th colspan="<?php echo $h; ?>">
-				<center>Kriteria</center>
-			</th>
-		</tr>
-		<tr>
+	<table class="table table-bordered table-responsive">
+		<thead>
+			<tr>
+				<th colspan="<?php echo $h; ?>">
+					<center>Kriteria</center>
+				</th>
+			</tr>
+			<tr>
+				<?php
+				$hk = mysqli_query($k21, "select nama_kriteria from kriteria order by id_kriteria asc;");
+				while ($dhk = mysqli_fetch_assoc($hk)) {
+
+					echo "<th>$dhk[nama_kriteria]</th>";
+				}
+				?>
+			</tr>
+			<tr>
+				<?php
+				for ($n = 1; $n <= $h; $n++) {
+					echo "<th>y<sub>$n</sub><sup>-</sup></th>";
+				}
+				?>
+			</tr>
+		</thead>
+		<tbody>
 			<?php
-			$hk = mysqli_query($k21, "select nama_kriteria from kriteria order by id_kriteria asc;");
-			while ($dhk = mysqli_fetch_assoc($hk)) {
+			$i = 0;
+			$a = mysqli_query($k21, "select * from kriteria order by id_kriteria asc;");
+			echo "<tr>";
+			while ($da = mysqli_fetch_assoc($a)) {
+				$idalt = $da['id_kriteria'];
 
-				echo "<th>$dhk[nama_kriteria]</th>";
-			}
-			?>
-		</tr>
-		<tr>
-			<?php
+				//ambil nilai
+				$n = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idalt'  order by id_matrik ASC");
 
-			for ($n = 1; $n <= $h; $n++) {
+				$c = 0;
+				$ymax = array();
+				while ($dn = mysqli_fetch_assoc($n)) {
+					$idk = $dn['id_kriteria'];
 
-				echo "<th>y<sub>$n</sub><sup>-</sup></th>";
-			}
-			?>
-		</tr>
-	</thead>
-	<tbody>
-		<?php
-		$i = 0;
-		$a = mysqli_query($k21, "select * from kriteria order by id_kriteria asc;");
-		echo "<tr>";
-		while ($da = mysqli_fetch_assoc($a)) {
+					//nilai kuadrat
+					$nilai_kuadrat = 0;
+					$k = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk' order by id_matrik ASC ");
+					while ($dkuadrat = mysqli_fetch_assoc($k)) {
+						$nilai_kuadrat = $nilai_kuadrat + ($dkuadrat['nilai'] * $dkuadrat['nilai']);
+					}
 
+					//hitung jml alternatif
+					$jml_alternatif = mysqli_query($k21, "select * from alternatif");
+					$jml_a = mysqli_num_rows($jml_alternatif);
+					//nilai bobot kriteria (rata")
+					$bobot = 0;
+					$tnilai = 0;
 
+					$k2 = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk' order by id_matrik ASC ");
+					while ($dbobot = mysqli_fetch_assoc($k2)) {
+						$tnilai = $tnilai + $dbobot['nilai'];
+					}
+					$bobot = $tnilai / $jml_a;
 
-			$idalt = $da['id_kriteria'];
+					//nilai bobot input
+					$b2 = mysqli_query($k21, "select * from kriteria where id_kriteria='$idk'");
+					$nbot = mysqli_fetch_assoc($b2);
+					$bot = $nbot['bobot'];
 
-			//ambil nilai
+					$v = round(($dn['nilai'] / sqrt($nilai_kuadrat)) * $bot, 4);
 
-			$n = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idalt'  order by id_matrik ASC");
-
-			$c = 0;
-			$ymax = array();
-			while ($dn = mysqli_fetch_assoc($n)) {
-				$idk = $dn['id_kriteria'];
-
-
-				//nilai kuadrat
-
-				$nilai_kuadrat = 0;
-				$k = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk' order by id_matrik ASC ");
-				while ($dkuadrat = mysqli_fetch_assoc($k)) {
-					$nilai_kuadrat = $nilai_kuadrat + ($dkuadrat['nilai'] * $dkuadrat['nilai']);
+					$ymax[$c] = $v;
+					$c++;
 				}
 
-				//hitung jml alternatif
-				$jml_alternatif = mysqli_query($k21, "select * from alternatif");
-				$jml_a = mysqli_num_rows($jml_alternatif);
-				//nilai bobot kriteria (rata")
-				$bobot = 0;
-				$tnilai = 0;
-
-				$k2 = mysqli_query($k21, "select * from nilai_matrik where id_kriteria='$idk' order by id_matrik ASC ");
-				while ($dbobot = mysqli_fetch_assoc($k2)) {
-					$tnilai = $tnilai + $dbobot['nilai'];
+				if ($nbot['sifat'] == 'cost') {
+					echo "<td>" . max($ymax) . "</td>";
+				} else {
+					echo "<td>" . min($ymax) . "</td>";
 				}
-				$bobot = $tnilai / $jml_a;
-
-				//nilai bobot input
-				$b2 = mysqli_query($k21, "select * from kriteria where id_kriteria='$idk'");
-				$nbot = mysqli_fetch_assoc($b2);
-				$bot = $nbot['bobot'];
-
-
-				$v = round(($dn['nilai'] / sqrt($nilai_kuadrat)) * $bot, 4);
-
-				$ymax[$c] = $v;
-				$c++;
 			}
+			echo "</tr>";
+			?>
 
-			if ($nbot['sifat'] == 'cost') {
-				echo "<td>" . max($ymax) . "</td>";
-			} else {
-				echo "<td>" . min($ymax) . "</td>";
-			}
-		}
-		echo "</tr>";
-		?>
-
-	</tbody>
-</table>
+		</tbody>
+	</table>
 </font>
