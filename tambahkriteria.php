@@ -38,9 +38,9 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 	<br />
 	<input style="font-size: 15px;" type="text" name="poin4" class="form-control" placeholder="Poin 4">
 	<br />
-	<select name="sifat" class="form-control" style="font-size: 15px;" >
-		<option value="benefit">Benefit</option>
-		<option value="cost">Cost</option>
+	<select name="sifat" class="form-control" style="font-size: 12px;" >
+		<option style="font-size: 15px;" value="benefit">Benefit</option>
+		<option style="font-size: 15px;" value="cost">Cost</option>
 	</select>
 	<br />
 	<input style="font-size: 15px;"  type="submit" name="simpan" value="Simpan" class="btn btn-primary">
