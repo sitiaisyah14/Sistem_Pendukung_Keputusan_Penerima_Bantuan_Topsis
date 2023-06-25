@@ -1,8 +1,5 @@
 <?php
-
 include("konfig/koneksi.php");
-
-
 $query = "SELECT max(id_kriteria) as idMaks FROM kriteria";
 $hasil = mysqli_query($k21, $query);
 $data  = mysqli_fetch_array($hasil);
@@ -23,6 +20,7 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 	<br><h3 class="box-title">Tambah Kriteria</h3><br>
 </div>
 
+<<<<<<< HEAD
 
 <form action="" method="POST" >
 	<font size="3px">
@@ -48,6 +46,31 @@ $IDbaru = $char . sprintf("%02s", $noUrut);
 	<br />
 	<input style="font-size: 15px;"  type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 	<br />
+=======
+<form action="" method="POST">
+	<font size="2px">
+		<input type="text" name="id_kriteria" class="form-control" value="<?php echo $IDbaru; ?>" readonly>
+		<br />
+		<input type="text" name="nama_kriteria" class="form-control" placeholder="Nama Kriteria">
+		<br />
+		<input type="text" name="bobot" class="form-control" placeholder="Bobot">
+		<br />
+		<input type="text" name="poin1" class="form-control" placeholder="Poin 1">
+		<br />
+		<input type="text" name="poin2" class="form-control" placeholder="Poin 2">
+		<br />
+		<input type="text" name="poin3" class="form-control" placeholder="Poin 3">
+		<br />
+		<input type="text" name="poin4" class="form-control" placeholder="Poin 4">
+		<br />
+		<select name="sifat" class="form-control">
+			<option value="benefit">Benefit</option>
+			<option value="cost">Cost</option>
+		</select>
+		<br />
+		<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+		<br />
+>>>>>>> d04769b1bd5e0051213080a01f1b247144434664
 	</font>
 </form>
 
@@ -59,5 +82,4 @@ if (isset($_POST['simpan'])) {
 		echo "<script>alert('Disimpan'); window.open('index.php?a=kriteria&k=kriteria','_self');</script>";
 	}
 }
-
 ?>
